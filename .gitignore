@@ -1,0 +1,65 @@
+BraveSoftware
+cef_user_data
+dconf
+dlv
+enchant
+eog
+evolution
+Code/Backups/
+Code/Cache/
+Code/CachedConfigurations/
+Code/CachedData/
+Code/CachedExtensionVSIXs/
+Code/CachedExtensions/
+Code/Code Cache/
+Code/Cookies
+Code/Cookies-journal
+Code/Crash Reports/
+Code/GPUCache/
+Code/Local Storage/
+Code/Network Persistent State
+Code/Preferences
+Code/QuotaManager
+Code/QuotaManager-journal
+Code/Service Worker/
+Code/Session Storage/
+Code/TransportSecurity
+Code/User/globalStorage/
+Code/User/workspaceStorage/
+Code/code.lock
+Code/databases/
+Code/exthost Crash Reports/
+Code/fileWatcher/
+Code/languagepacks.json
+Code/logs/
+Code/machineid
+Code/storage.json
+Code/watcherServiceParcelSharedProcess/
+Microsoft/
+QtProject.conf
+geary/
+gedit/
+git/
+gnome-control-center/
+gnome-initial-setup-done
+goa-1.0/
+gtk-3.0/
+ibus/
+libreoffice/
+menus/
+mimeapps.list
+monitors.xml
+monitors.xml~
+pop-shell/
+pulse/
+qalculate/
+teams/
+touchegg/
+user-dirs.dirs
+user-dirs.locale
+zsh/..zshrc.swp
+zsh/.oh-my-zsh/
+zsh/.zcompdump
+zsh/.zcompdump-green-peril-5.8
+zsh/.zsh_history
+zsh/.zshrc.pre-oh-my-zsh
