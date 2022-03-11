@@ -14,9 +14,6 @@
     "telemetry.telemetryLevel": "error",
     "editor.formatOnSave": true,
     "editor.wordWrap": "on",
-    "cSpell.userWords": [
-        "belife"
-    ],
     "workbench.startupEditor": "none",
     "go.toolsManagement.autoUpdate": true,
     "editor.bracketPairColorization.enabled": true,
@@ -31,6 +28,7 @@
         "sideBar.background": "#282c34",
         "tab.activeBorder": "#d19a66",
     },
-    "glassit.alpha": 245,
-    "terminal.external.linuxExec": "alacritty"
+    "glassit.alpha": 253,
+    "terminal.external.linuxExec": "alacritty",
+    "window.titleBarStyle": "custom"
 }
