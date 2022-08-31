@@ -1,0 +1,92 @@
+set icons
+set hidden
+set previewer lf-scrollingpreview-previewer
+set timefmt " 2006-01-02  15:04:05.000000000-0700"
+
+map m
+map d
+map <lt> scrollup
+map <gt> scrolldown
+map h updir_reload
+map <left> updir_reload
+map l downdir
+map <right> downdir
+
+# Cut/Copy
+map . set hidden!
+map dD delete
+map dd trash
+map dr trash_restore
+map p paste
+map x cut
+map y copy
+map C clear
+map <enter> open
+map md mkdir
+
+
+# Movement
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gC cd ~/Courses
+map gv cd ~/Videos
+map gs cd ~/.local/bin
+map gl edit_lfrc
+
+
+cmd edit_lfrc ${{
+$EDITOR ~/.config/lf/lfrc
+}}
+
+cmd mkdir %{{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd trash %trash-put $fx
+
+cmd trash_restore ${{
+    trash-restore
+}}
+
+cmd downdir ${{
+    # do not open if file
+    [ -d "$f" ] && lf -remote "send $id open"
+}}
+
+cmd updir_reload &{{
+  # reset offset when leaving file
+  echo "1" > "$LF_TEMPDIR/offset"
+  lf -remote "send $id reload"
+
+  #go up a dir
+  lf -remote "send $id updir"
+}}
+
+cmd scrolldown &{{
+
+    # Retrieve the current preview offset.
+    offset="$(cat "$LF_TEMPDIR/offset")"
+    
+    # Increment the offset.
+    echo "$((offset+1))" >"$LF_TEMPDIR/offset"
+    # Trigger a reload.
+    lf -remote "send $id reload"
+    
+}}
+
+cmd scrollup &{{
+        # Retrieve the current preview offset.
+        offset="$(cat "$LF_TEMPDIR/offset")"
+
+        # Decrement the offset if not at top.
+        if [ "$offset" -gt 1 ]; then
+            echo "$((offset-1))" >"$LF_TEMPDIR/offset"
+        fi
+
+        # Trigger a reload.
+        lf -remote "send $id reload"
+}}
