@@ -1,3 +1,4 @@
+#! /usr/bin/env go
 set icons
 set hidden
 set previewer lf-scrollingpreview-previewer

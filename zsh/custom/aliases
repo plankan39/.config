@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -12,37 +12,25 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 
-# Git aliases
-if [ -x "$(command -v git)" ]; then
-    alias g="git"
-    alias gca="git commit -a -m "
-fi
+# editor
+alias e=$EDITOR
 
-
+# ls aliases
 # use exa instead of ls if available for colored output
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa --all"
-    alias la="exa --long --all --group"
+if [ -x "$(command -v exa)" ]; then 
+    alias l="exa -1a"
+    alias la="exa -lagh"
+    alias ls="exa -lah --no-permissions --no-user"
 fi
 
 # use bat instead of cat if it exists
-
-if [ -x "$(command -v bat)" ]; then
-    alias cat="bat"
-fi
-if [ -x "$(command -v lfscroll)" ]; then
-    alias lf="lfscroll"
-fi
+[[ -x "$(command -v bat)" ]] && alias cat="bat"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# Enable aliases to be sudo’ed
-# alias sudo='sudo '
-
 
 # IP addresses
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"

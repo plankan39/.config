@@ -5,9 +5,3 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CONFIG_DIRS="/etc/xdg:$XDG_CONFIG_DIRS"
 
-
-
-
-
-
-

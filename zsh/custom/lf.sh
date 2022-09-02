@@ -1,0 +1,1 @@
+/home/lukaselmlund/.config/lf/lf.sh
