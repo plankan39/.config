@@ -21,14 +21,17 @@ fi
 
 # use exa instead of ls if available for colored output
 if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
+    alias ls="exa --all"
     alias la="exa --long --all --group"
 fi
 
 # use bat instead of cat if it exists
 
-if [ -x "$(command -v batcat)" ]; then
-    alias cat="batcat"
+if [ -x "$(command -v bat)" ]; then
+    alias cat="bat"
+fi
+if [ -x "$(command -v lfscroll)" ]; then
+    alias lf="lfscroll"
 fi
 
 # Always enable colored `grep` output

@@ -82,16 +82,23 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR='nvim'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-source $ZDOTDIR/aliases
+# custom rcfiles
+if [[ -f $ZDOTDIR/aliases ]]; then
+    source $ZDOTDIR/aliases
+fi
+
+if [[ -f $ZDOTDIR/pathrc ]]; then
+    source $ZDOTDIR/pathrc
+fi
+
+if [[ -f $HOME/.config/lf/lf.zshrc ]]; then
+    source $HOME/.config/lf/lf.zshrc
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
